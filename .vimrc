@@ -88,8 +88,8 @@ set regexpengine=1
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 
+colorscheme Tomorrow-Night
 set background=dark
-colorscheme sierra
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -201,7 +201,7 @@ augroup END
 
 
 "Airline Setup
-let g:airline_theme = 'base16'
+let g:airline_theme = 'cool'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
