@@ -1,13 +1,3 @@
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim (usually just
-" /usr/share/vim/vimcurrent/debian.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vim/vimrc), since debian.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing debian.vim since it alters the value of the
-" 'compatible' option.
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
 
 " Uncomment the next line to make Vim more Vi-compatible
@@ -30,12 +20,9 @@ if has(!"nvim")
 endif
 
 
-"Pathogen
-execute pathogen#infect()
-
 "Vundle config
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim " Favor verificar o diretorio do Vundle
 call vundle#rc()
 
 "Vim swap and backup dir
@@ -65,12 +52,12 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
-"Plugin 'ap/vim-css-color'
+Plugin 'ap/vim-css-color'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
-"Plugin 'mitsuhiko/vim-jinja'
+Plugin 'mitsuhiko/vim-jinja'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
@@ -123,7 +110,7 @@ set lazyredraw
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-"set relativenumber
+set relativenumber
 set list
 set listchars=tab:»-,eol:¶,extends:›,precedes:‹,nbsp:·,trail:·
 
@@ -201,7 +188,7 @@ augroup END
 
 
 "Airline Setup
-let g:airline_theme = 'cool'
+let g:airline_theme = 'cobalt2'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
@@ -214,8 +201,8 @@ let g:airline#extensions#ctrlp#color_template = 'visual'
 let g:airline#extensions#ctrlp#color_template = 'replace'
 
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = '▶'
-"let g:airline#extensions#tabline#right_sep = '◀'
+let g:airline#extensions#tabline#left_sep = '▶'
+let g:airline#extensions#tabline#right_sep = '◀'
 let g:airline#extensions#tabline#show_buffers = 0
 let g:javascript_enable_domhtmlcss = 1
 
@@ -311,4 +298,3 @@ let g:tagbar_autofocus = 1 "autofocus on Tagbar open
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
-
